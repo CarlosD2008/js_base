@@ -21,7 +21,7 @@ document.getElementById("fetchUser").addEventListener("click", async function ()
 
     // 1ª Digitação (Aqui)
 if (!response.ok){
-  throw new Error ("Erro ao buscar os dados do usuario.") // Lança um erro personalizado
+  throw new Error ("Erro ao buscar os dados do usuario."); // Lança um erro personalizado
 }
     // Converte a resposta para JSON e espera o resultado (await)
     const user = await response.json();
@@ -29,15 +29,15 @@ if (!response.ok){
     // Exibe os dados do usuário na página
     userDataElement.innerHTML = `
         <h2>Dados do Usuário:</h2>
-        <p><strong>Nome:</strong> ${user.name}</p>
-        <p><strong>Email:</strong> ${user.email}</p>
-        <p><strong>Telefone:</strong> ${user.phone}</p>
+          <p><strong>Nome:</strong> ${user.name}</p>
+          <p><strong>Email:</strong> ${user.email}</p>
+          <p><strong>Telefone:</strong> ${user.phone}</p>
     
-`;
+    `;
     
   } catch (error) {
     // Bloco catch: captura e trata erros que ocorreram no bloco try
-    userDataElement.innerHTML = <p style="color: red;">Erro: ${error.message}</p>; // Exibe a mensagem de erro
+    userDataElement.innerHTML = `<p style="color: red;">Erro: ${error.message}</p>;` // Exibe a mensagem de erro
     console.error(error); // Exibe o erro no console para debugging
   }
 });
